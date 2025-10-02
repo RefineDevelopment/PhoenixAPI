@@ -15,7 +15,7 @@ You can get PhoenixAPI directly from our maven repository:
 <repositories>
     <repository>
         <id>refine-public</id>
-        <url>https://maven.refinedev.xyz/repository/public-repo/</url>
+        <url>https://maven.refinedev.xyz/public-repo/</url>
     </repository>
 </repositories>
 ```
