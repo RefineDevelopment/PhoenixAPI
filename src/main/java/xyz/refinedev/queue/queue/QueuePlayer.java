@@ -1,30 +1,23 @@
 package xyz.refinedev.queue.queue;
 
 import lombok.Getter;
-import org.bukkit.plugin.IllegalPluginAccessException;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
-/**
- * This Project is the property of Phoenix Development © 2022
- * Redistribution of this Project is not allowed
- *
- * @author Creaxx
- * @since 8/24/2022
- * Project: pxQueue
- */
 @Getter
+@Setter
+@RequiredArgsConstructor
 public class QueuePlayer implements Comparable<QueuePlayer> {
 
-    private UUID uuid;
-    private int priority;
-    private long inserted;
+    private final UUID uuid;
+    private final int priority;
+    private final long inserted;
+    private boolean removed = false;
 
     @Override
     public int compareTo(QueuePlayer other) {
-        throw new IllegalPluginAccessException("You need to install the plugin.");
+        throw new UnsupportedOperationException("Install the plugin.");
     }
-
-
 }
-

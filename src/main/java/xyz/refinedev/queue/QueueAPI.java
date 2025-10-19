@@ -1,6 +1,7 @@
 package xyz.refinedev.queue;
 
 import org.bukkit.plugin.IllegalPluginAccessException;
+import xyz.refinedev.queue.queue.QueuePlayer;
 import xyz.refinedev.queue.queue.impl.Queue;
 
 import java.util.UUID;
@@ -19,6 +20,14 @@ public class QueueAPI {
 
     public QueueAPI() {
         INSTANCE = this;
+    }
+
+    public void addPlayerToQueue(UUID uuid, String queueName) {
+        throw new IllegalPluginAccessException("You need to install the plugin.");
+    }
+
+    public void removePlayerFromQueue(UUID uuid) {
+        throw new IllegalPluginAccessException("You need to install the plugin.");
     }
 
     public boolean isInQueue(UUID uuid) {
