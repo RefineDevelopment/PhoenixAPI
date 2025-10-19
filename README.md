@@ -1,11 +1,11 @@
-# Phoenix-API (Version: 2.0)
+# Phoenix API (Version: 2.0)
 This is the API for Phoenix & pxQueue!
 
 ## Installing
 You can either shade this repository into your plugin, or run it as a plugin by itself.
 
 1. Clone this repository
-2. Enter the directory: `cd Phoenix-API`
+2. Enter the directory: `cd PhoenixAPI`
 3. Build & install with Maven: `mvn clean install`
 
 OR
@@ -15,7 +15,7 @@ You can get PhoenixAPI directly from our maven repository:
 <repositories>
     <repository>
         <id>refine-public</id>
-        <url>https://maven.refinedev.xyz/repository/public-repo/</url>
+        <url>https://maven.refinedev.xyz/public-repo/</url>
     </repository>
 </repositories>
 ```
