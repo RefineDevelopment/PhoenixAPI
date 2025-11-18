@@ -2,7 +2,9 @@ package xyz.refinedev.phoenix.handler;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import xyz.refinedev.phoenix.profile.punishment.IProof;
 import xyz.refinedev.phoenix.profile.punishment.IPunishment;
+import xyz.refinedev.phoenix.profile.punishment.ProofType;
 import xyz.refinedev.phoenix.profile.punishment.PunishmentType;
 import xyz.refinedev.phoenix.repository.IPunishmentRepository;
 
@@ -167,6 +169,10 @@ public interface IPunishmentHandler {
      * @return Punishments
      */
     @Nullable IPunishment findByPunishmentID(String id);
+
+    @NotNull IPunishment createEmptyPunishment();
+
+    @NotNull IProof createProof(ProofType type, String proof, UUID addedBy);
 
     IPunishmentRepository getRepository();
 }
