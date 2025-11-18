@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Nullable;
 import xyz.refinedev.phoenix.profile.IProfile;
 import xyz.refinedev.phoenix.rank.IRank;
 import xyz.refinedev.phoenix.repository.IRankRepository;
+import xyz.refinedev.phoenix.scope.IScope;
 
 import java.util.List;
 import java.util.UUID;
@@ -70,6 +71,19 @@ public interface IRankHandler {
      * @param withUpdate {@link Boolean} Should we update the permissions of the players?
      */
     void updateRank(IRank rank, boolean withUpdate);
+
+    /**
+     * Create a {@link IRank}
+     *
+     * @param name       {@link String} Name
+     *
+     * @return {@link IRank}
+     */
+    IRank createRank(String name);
+
+    IScope createScope(String scope) throws IllegalArgumentException;
+
+    IScope getGlobalScope();
 
     /**
      * Force every server to recalculate all permissions for players with the rank
