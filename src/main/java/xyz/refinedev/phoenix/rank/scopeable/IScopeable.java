@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import xyz.refinedev.phoenix.scope.IScope;
 
 import java.util.List;
+import java.util.Set;
 
 public interface IScopeable {
     /**
@@ -18,7 +19,7 @@ public interface IScopeable {
      *
      * @return {@link Boolean} Active
      */
-    boolean isScope(String server, String group);
+    boolean isScope(String server, Set<String> groups);
 
     /**
      * Is the {@link IScope} available on the current {@link IScope}?

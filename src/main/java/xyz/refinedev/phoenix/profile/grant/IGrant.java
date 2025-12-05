@@ -8,6 +8,7 @@ import xyz.refinedev.phoenix.scope.IScope;
 import xyz.refinedev.phoenix.utils.Exclude;
 
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -43,7 +44,7 @@ public interface IGrant extends ILogable {
      *
      * @return {@link Boolean} Active
      */
-    boolean isScope(String server, String group);
+    boolean isScope(String server, Set<String> groups);
 
     /**
      * Is the {@link IGrant} available on the current {@link IScope}?

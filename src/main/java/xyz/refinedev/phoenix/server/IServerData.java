@@ -2,6 +2,7 @@ package xyz.refinedev.phoenix.server;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 public interface IServerData {
@@ -31,7 +32,7 @@ public interface IServerData {
 
     public String getDisplayName();
 
-    public String getServerGroup();
+    public Set<String> getServerGroups();
 
     public String getRegion();
 
@@ -57,7 +58,7 @@ public interface IServerData {
 
     public void setDisplayName(String displayName);
 
-    public void setServerGroup(String serverGroup);
+    public void setServerGroups(Set<String> serverGroups);
 
     public void setRegion(String region);
 

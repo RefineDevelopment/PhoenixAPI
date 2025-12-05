@@ -265,7 +265,7 @@ public interface INetworkHandler {
 
     String getDisplayName();
 
-    String getServerGroup();
+    Set<String> getServerGroups();
 
     String getRegion();
 
