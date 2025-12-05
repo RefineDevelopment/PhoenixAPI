@@ -33,7 +33,7 @@
         </repository>
         <repository>
             <id>refine-public</id>
-            <url>https://maven.refinedev.xyz/public-repo/</url>
+            <url>https://maven.refinedev.org/public-repo/</url>
         </repository>
     </repositories>
 
@@ -41,7 +41,7 @@
         <repository>
             <id>refine-public</id>
             <name>refine-public</name>
-            <url>https://maven.refinedev.xyz/public-repo</url>
+            <url>https://maven.refinedev.org/public-repo</url>
         </repository>
     </distributionManagement>
 
