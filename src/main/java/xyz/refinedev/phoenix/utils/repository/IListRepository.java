@@ -4,49 +4,64 @@ import xyz.refinedev.phoenix.utils.repository.filters.api.FilterOptions;
 import xyz.refinedev.phoenix.utils.repository.sorting.api.SortingOptions;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public interface IListRepository<K, V> {
-    List<V> getCache();
-
-    V getFromCache(K key);
-
-    CompletableFuture<V> getFromDatabase(K key);
-
-    V getFromDatabaseSync(K key);
-
-    CompletableFuture<List<V>> getAllEntriesFromDatabase();
-
-    CompletableFuture<List<V>> getAllEntriesFromDatabase(FilterOptions bson);
-
-    List<V> getAllEntriesSyncFromDatabase();
-
-    List<V> getAllEntriesSyncFromDatabase(FilterOptions bson);
-
     void addToCache(V value);
 
     void removeFromCache(V value);
 
-    void saveToDatabase(V value);
+    List<V> getCache();
 
-    void saveToDatabaseSync(V values);
+    Optional<V> getFromCache(K key);
 
-    void saveToDatabaseSync(List<V> values);
+    CompletableFuture<Optional<V>> fetch(K key);
 
-    void removeFromDatabase(V value);
+    CompletableFuture<Optional<V>> fetch(FilterOptions bson);
 
-    void removeFromDatabaseSync(V value);
+    CompletableFuture<Optional<V>> fetch(FilterOptions bson, SortingOptions sorts);
 
-    long removeFromDatabaseSync(FilterOptions options);
+    Optional<V> fetchSync(K key);
 
-    CompletableFuture<V> getFromDatabase(FilterOptions bson, SortingOptions sort);
+    Optional<V> fetchSync(FilterOptions bson);
 
-    V getFromDatabaseSync(FilterOptions bson, SortingOptions sort);
+    Optional<V> fetchSync(FilterOptions bson, SortingOptions sorts);
 
-    V getFromDatabaseSync(FilterOptions bson);
+    CompletableFuture<List<V>> fetchAll();
 
-    void deleteAll();
+    CompletableFuture<List<V>> fetchAll(FilterOptions bson);
 
-    long countDocuments();
+    CompletableFuture<List<V>> fetchAll(FilterOptions bson, SortingOptions sorts);
+
+    List<V> fetchAllSync();
+
+    List<V> fetchAllSync(FilterOptions bson);
+
+    List<V> fetchAllSync(FilterOptions bson, SortingOptions sorts);
+
+    CompletableFuture<Void> save(V value);
+
+    CompletableFuture<Void> save(List<V> values);
+
+    void saveSync(V values);
+
+    void saveSync(List<V> values);
+
+    CompletableFuture<Void> delete(V value);
+
+    CompletableFuture<Long> delete(FilterOptions options);
+
+    void deleteSync(V value);
+
+    long deleteSync(FilterOptions options);
+
+    CompletableFuture<Void> deleteAll();
+
+    void deleteAllSync();
+
+    long count(FilterOptions options);
+
+    long count();
 
 }

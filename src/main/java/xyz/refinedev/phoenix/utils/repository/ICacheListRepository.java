@@ -5,7 +5,6 @@ import xyz.refinedev.phoenix.utils.repository.filters.api.FilterOptions;
 import xyz.refinedev.phoenix.utils.repository.updates.api.UpdateOptions;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 public interface ICacheListRepository<K, V> extends IMapRepository<K, V> {
     boolean isLocked(K key);
@@ -21,6 +20,4 @@ public interface ICacheListRepository<K, V> extends IMapRepository<K, V> {
     Cache<K, List<V>> getListCache();
 
     void updateMany(FilterOptions filterOptions, UpdateOptions updateOptions);
-
-    CompletableFuture<Void> saveToDatabaseFuture(K key, V value);
 }
