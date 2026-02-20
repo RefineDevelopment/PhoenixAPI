@@ -20,7 +20,7 @@ public interface IScope {
     /**
      * Get a list of formatted Scopes
      *
-     * @param scopes {@link List < Scope>} Scopes
+     * @param scopes {@link List <Scope>} Scopes
      * @return {@link List<String>} Formatted Scopes
      */
     static List<String> toNiceScopes(List<IScope> scopes) {
